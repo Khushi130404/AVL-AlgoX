@@ -5,9 +5,13 @@
 ## 🚀 Features
 
 ➕ **Insertion** : Inserts nodes into the AVL tree while maintaining balance.  
+
 ➖ **Deletion** : Removes nodes and rebalances the tree.  
+
 🔎 **Searching** : Searches for a node in the tree.  
+
 🛤 **Traversals** : Supports Pre-Order, In-Order, and Post-Order traversals.  
+
 🔄 **Balancing** : Implements Left Rotation, Right Rotation, Left-Right Rotation, and Right-Left Rotation.  
 
 ## Usage
@@ -18,16 +22,23 @@
 4️⃣ Search for a node by entering its key.  
 5️⃣ Delete a node and observe the updated tree structure.  
 
-## Function Descriptions
+## 🔧 Function Descriptions
 
-- **getNode()**: Creates a new node with a given key.
-- **height(node*)**: Computes the height of a given node.
-- **balance_factor(node*)**: Calculates the balance factor of a node.
-- **Rotations (Right, Left, Left-Right, Right-Left)**: Balances the tree after insertion and deletion.
-- **Insert_node(node*)**: Inserts a node while maintaining AVL balance.
-- **delete_node(node*)**: Deletes a node and rebalances the tree.
-- **search_node(node*, int)**: Searches for a node with a given key.
-- **PreOrder(), InOrder(), PostOrder()**: Traverses the tree in different orders.
+📌 **getNode()**: 🏗️ Creates a new node with a given key.  
+
+📏 **height(node*)**: 📊 Computes the height of a given node.  
+
+⚖️ **balance_factor(node*)**: 🔢 Calculates the balance factor of a node.  
+
+🔄 **Rotations (Right, Left, Left-Right, Right-Left)**: ♻️ Balances the tree after insertion and deletion.  
+
+➕ **Insert_node(node*)**: 🌱 Inserts a node while maintaining AVL balance.  
+
+➖ **delete_node(node*)**: ❌ Deletes a node and rebalances the tree.  
+
+🔎 **search_node(node*, int)**: 🕵️ Searches for a node with a given key.  
+
+🛤 **PreOrder(), InOrder(), PostOrder()**: 📜 Traverses the tree in different orders.  
 
 ## Requirements:
 - GCC Compiler (for Linux/Windows)
