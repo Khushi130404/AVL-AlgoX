@@ -1,390 +1,79 @@
-// Inplementation of AVL tree
+# AVL-AlgoX
 
-#include <stdio.h>
-#include <stdlib.h>
+AVL-AlgoX is an implementation of an AVL tree, a self-balancing binary search tree where the difference between heights of left and right subtrees cannot be more than one for all nodes. This program allows insertion, deletion, and searching of nodes while ensuring the tree remains balanced through rotations.
 
-struct AVL_Tree_Node
-{
-    int key;
-    struct AVL_Tree_Node* left;
-    struct AVL_Tree_Node* right;
-};
-typedef struct AVL_Tree_Node node;
+## Features
 
-node* getNode();
-int height(node*);
-int max(int,int);
-int balance_factor(node*);
-node* right_Rotation(node*);
-node* left_Rotation(node*);
-node* left_right_Rotation(node*);
-node* right_left_Rotation(node*);
-node* Insert_node(node*);
-node* balance_Tree(node*);
-void PreOrder(node*);
-void InOrder(node*);
-void PostOrder(node*);
-node* search_node(node*,int);
-node* search_before_node(node*,int);
-node* delete_node(node*);
-int Inorder_successor(node*);
-int Inorder_predeccessor(node*);
+- **Insertion**: Inserts nodes into the AVL tree while maintaining balance.
+- **Deletion**: Removes nodes and rebalances the tree.
+- **Searching**: Searches for a node in the tree.
+- **Traversals**: Supports Pre-Order, In-Order, and Post-Order traversals.
+- **Balancing Operations**: Implements Left Rotation, Right Rotation, Left-Right Rotation, and Right-Left Rotation.
 
-int main()
-{
-    int n;
-    node* root = NULL;
+## Compilation and Execution
 
-    // Insertion of node
-    printf("\nEnter the number of nodes: ");
-    scanf("%d",&n);
-    for(int i=0; i<n; i++)
-    {
-        root = Insert_node(root);
-    }
-    printf("\nBinary Search Tree traversal...\n");
-    printf("Pre-Order traversal...\n");
-    PreOrder(root);
-    printf("\nPost-Order traversal...\n");
-    PostOrder(root);
-    printf("\nIn-Order traversal...\n");
-    InOrder(root);
+### Requirements:
+- GCC Compiler (for Linux/Windows)
+- Basic knowledge of C programming
 
-    // Search operation
-    int search;
-    node* searchNode;
-    printf("\nEnter the node to search: ");
-    scanf("%d",&search);
-    searchNode = search_node(root,search);
-    if(searchNode==NULL)
-    {
-        printf("\nNode not found...!");
-    }
-    else
-    {
-        printf("\nNode found...!\n%d",searchNode->key);
-    }
+### Steps to Compile and Run:
+1. Open a terminal or command prompt.
+   
+2. Navigate to the directory containing `AVL-AlgoX.c`.
+   
+3. Compile the program using:
+   ```sh
+   gcc AVL-AlgoX.c -o AVL-AlgoX
+   ```
+   
+4. Run the compiled program:
+   ```sh
+   ./AVL-AlgoX
+   ```
 
-    // Deletion operation
-    root = delete_node(root);
-    printf("\nBinary Search Tree traversal...\n");
-    printf("Pre-Order traversal...\n");
-    PreOrder(root);
-    printf("\nPost-Order traversal...\n");
-    PostOrder(root);
-    printf("\nIn-Order traversal...\n");
-    InOrder(root);
+## Usage
 
-    return 0;
-}
+1. Enter the number of nodes to insert.
+2. Enter the values for each node.
+3. View the tree traversal outputs.
+4. Search for a node by entering its key.
+5. Delete a node and observe the updated tree structure.
 
-node* getNode()
-{
-    node* newnode = (node*) malloc(sizeof(node));
-    printf("\nEnter the info for node: ");
-    scanf("%d",&newnode->key);
-    newnode->left=NULL;
-    newnode->right=NULL;
-    return newnode;
-}
-int max (int a,int b)
-{
-    if(a>b)
-    {
-        return a;
-    }
-    else
-    {
-        return b;
-    }
-}
-int height (node* crrptr)
-{
-    int height1=0,height2=0;
-    if(crrptr==NULL)
-    {
-        return -1;
-    }
-    else if(crrptr->left == NULL && crrptr->right==NULL)
-    {
-        return 0;
-    }
-    else
-    {
-        if(crrptr->left!=NULL)
-        {
-            height1 = height(crrptr->left)+1;
-        }
-        if(crrptr->right!=NULL)
-        {
-            height2 = height(crrptr->right)+1; 
-        }
-        return max(height1,height2);
-    }
-}
-int balance_factor(node* crrptr)
-{
-    return (height(crrptr->left)-height(crrptr->right));
-}
-node* right_Rotation(node* x)
-{
-    node* y = x->left;
-    node* z = y->left;
+## Function Descriptions
 
-    x->left = y->right;
-    y->right = x;
-    return y;
-}
-node* left_Rotation(node* x)
-{
-    node* y = x->right;
-    node* z = y->right;
+- **getNode()**: Creates a new node with a given key.
+- **height(node*)**: Computes the height of a given node.
+- **balance_factor(node*)**: Calculates the balance factor of a node.
+- **Rotations (Right, Left, Left-Right, Right-Left)**: Balances the tree after insertion and deletion.
+- **Insert_node(node*)**: Inserts a node while maintaining AVL balance.
+- **delete_node(node*)**: Deletes a node and rebalances the tree.
+- **search_node(node*, int)**: Searches for a node with a given key.
+- **PreOrder(), InOrder(), PostOrder()**: Traverses the tree in different orders.
 
-    x->right = y->left;
-    y->left = x;
-    return y;
-}
-node* left_right_Rotation(node* x)
-{
-    x->left = left_Rotation(x->left);
-    x = right_Rotation(x);
-    return x;
-}
-node* right_left_Rotation(node* x)
-{
-    x->right = right_Rotation(x->right);
-    x = left_Rotation(x);
-    return x;
-}
-node* Insert_node(node* root)
-{
-    node* newnode = getNode();
-    node* crrptr = root;
+## Example Run
 
-    if(crrptr==NULL)
-    {
-        root = newnode;
-    }
-    else
-    {
-        while(crrptr!=NULL)
-        {
-            if(newnode->key > crrptr->key)
-            {
-                if(crrptr->right!=NULL)
-                {
-                    crrptr = crrptr->right;
-                }
-                else
-                {
-                    break;
-                }
-            }
-            else
-            {
-                if(crrptr->left!=NULL)
-                {
-                    crrptr = crrptr->left;
-                }
-                else
-                {
-                    break;
-                }
-            }
-        }
-        if(newnode->key > crrptr->key)
-        {
-            crrptr->right = newnode;
-        }
-        else
-        {
-            crrptr->left = newnode;
-        }
-        root = balance_Tree(root);
-    }
-    return root;
-}
-node* balance_Tree(node* crrptr)
-{
-    if(crrptr==NULL)
-    {
-        return crrptr;
-    }
-    if(crrptr->left!=NULL)
-    {
-        crrptr->left = balance_Tree(crrptr->left);
-    }
-    if(crrptr->right!=NULL)
-    {
-        crrptr->right = balance_Tree(crrptr->right);
-    }
-    
-    if(balance_factor(crrptr) < -1)
-    {
-        if(balance_factor(crrptr->right)<=0)
-        {
-            crrptr = left_Rotation(crrptr);
-        }
-        else
-        {
-            crrptr = right_left_Rotation(crrptr);
-        }
-    }
-    else if(balance_factor(crrptr)>1)
-    {
-        if(balance_factor(crrptr->left)>=0)
-        {
-            crrptr = right_Rotation(crrptr);
-        }
-        else
-        {
-            crrptr = left_right_Rotation(crrptr);
-        }
-    }    
-    return crrptr;
-}
-void PreOrder(node* crrptr)
-{
-    if(crrptr!=NULL)
-    {
-        printf("%d\t",crrptr->key);        
-        PreOrder(crrptr->left);
-        PreOrder(crrptr->right);
-    }
-}
-void InOrder(node* crrptr)
-{
-    if(crrptr!=NULL)
-    {
-        InOrder(crrptr->left);
-        printf("%d\t",crrptr->key);
-        InOrder(crrptr->right);
-    }
-}
-void PostOrder(node* crrptr)
-{
-    if(crrptr!=NULL)
-    {
-        PostOrder(crrptr->left);
-        PostOrder(crrptr->right);
-        printf("%d\t",crrptr->key);
-    }
-}
-node* search_node(node* crrptr,int info)
-{ 
-    node* search = NULL;
-    if(crrptr==NULL)
-    {
-        return NULL;
-    }
-    else if(crrptr->key==info)
-    {
-        return crrptr;   
-    }
-    else if(crrptr->key > info)
-    {
-        return search_node(crrptr->left,info);
-    }
-    else
-    {
-        return search_node(crrptr->right,info);
-    }
-}
-node* search_before_node(node* crrptr,int info)
-{
-    node* parent = NULL;
-    while(crrptr!=NULL)
-    {
-        if(crrptr->key == info)
-        {
-            return parent;
-        }
-        else if(crrptr->left!=NULL && crrptr->key > info)
-        {
-            parent = crrptr;
-            crrptr = crrptr->left;
-        }
-        else if(crrptr->right!=NULL && crrptr->key < info)
-        {
-            parent = crrptr;
-            crrptr = crrptr->right;
-        }
-        else
-        {
-            return NULL;
-        }
-    }  
-    return NULL;  
-}
-int  Inorder_successor(node* crrptr)
-{
-    node* parent = crrptr;
-    crrptr = crrptr->right;
-    if(crrptr->left==NULL)
-    {
-        parent->right = crrptr->right;
-        return crrptr->key;
-    }
-    while(crrptr->left!=NULL)
-    {
-        parent = crrptr;
-        crrptr = crrptr->left;
-    }
-    parent->left = NULL;
-    return crrptr->key;
-}
-int Inorder_predeccessor(node* crrptr)
-{
-    node* parent = crrptr;
-    crrptr = crrptr->left;
-    if(crrptr->right==NULL)
-    {
-        parent->left = crrptr->left;
-        return crrptr->key;
-    }
-    while(crrptr->right!=NULL)
-    {
-        parent = crrptr;
-        crrptr = crrptr->right;
-    }
-    parent->right=NULL;
-    return crrptr->key;
-}
-node* delete_node(node* root)
-{
-    int info;
-    printf("\nEnter the info to delete: ");
-    scanf("%d",&info);
-    node* search = search_node(root,info);
-    node* parent = search_before_node(root,info);
-    if(search == NULL)
-    {
-        printf("\nNode not found...!");
-    }
-    else if(search->left==NULL && search->right==NULL)
-    {
-        printf("\nNode found...!");
-        if(parent->left == search)
-        {
-            parent->left = NULL;
-        }
-        else
-        {
-            parent->right = NULL;
-        }
-    }
-    else
-    {
-        printf("\nNode found...!");
-        if(balance_factor(search)>=0)
-        {
-            search->key = Inorder_predeccessor(search);
-        }
-        else
-        {
-            search->key = Inorder_successor(search);
-        }
-    }
-    root = balance_Tree(root);
-    return root;
-}
+```
+Enter the number of nodes: 5
+Enter the info for node: 10
+Enter the info for node: 20
+Enter the info for node: 30
+Enter the info for node: 40
+Enter the info for node: 50
+
+Binary Search Tree traversal...
+Pre-Order traversal...
+30 20 10 40 50
+Post-Order traversal...
+10 20 50 40 30
+In-Order traversal...
+10 20 30 40 50
+
+Enter the node to search: 30
+Node found!
+
+Enter the info to delete: 20
+
+Binary Search Tree traversal after deletion...
+Pre-Order traversal...
+30 10 40 50
+```
