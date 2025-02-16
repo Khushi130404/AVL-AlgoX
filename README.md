@@ -1,14 +1,14 @@
-# AVL-AlgoX
+# AVL-AlgoX 🌳
 
-AVL-AlgoX is an implementation of an AVL tree, a self-balancing binary search tree where the difference between heights of left and right subtrees cannot be more than one for all nodes. This program allows insertion, deletion, and searching of nodes while ensuring the tree remains balanced through rotations.
+📌 AVL-AlgoX is an implementation of an AVL tree, a self-balancing binary search tree where the difference between heights of left and right subtrees cannot be more than    one for all nodes. This program allows insertion, deletion, and searching of nodes while ensuring the tree remains balanced through rotations.
 
-## Features
+## 🚀 Features
 
-- **Insertion**: Inserts nodes into the AVL tree while maintaining balance.
-- **Deletion**: Removes nodes and rebalances the tree.
-- **Searching**: Searches for a node in the tree.
-- **Traversals**: Supports Pre-Order, In-Order, and Post-Order traversals.
-- **Balancing Operations**: Implements Left Rotation, Right Rotation, Left-Right Rotation, and Right-Left Rotation.
+- **➕ Insertion**: Inserts nodes into the AVL tree while maintaining balance.
+- **➖ Deletion**: Removes nodes and rebalances the tree.
+- **🔎 Searching**: Searches for a node in the tree.
+- **🛤 Traversals**: Supports Pre-Order, In-Order, and Post-Order traversals.
+- **🔄 Balancing Operations**: Implements Left Rotation, Right Rotation, Left-Right Rotation, and Right-Left Rotation.
 
 ## Compilation and Execution
 
