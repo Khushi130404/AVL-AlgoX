@@ -4,32 +4,11 @@
 
 ## 🚀 Features
 
-- **➕ Insertion**: Inserts nodes into the AVL tree while maintaining balance.
-- **➖ Deletion**: Removes nodes and rebalances the tree.
-- **🔎 Searching**: Searches for a node in the tree.
-- **🛤 Traversals**: Supports Pre-Order, In-Order, and Post-Order traversals.
-- **🔄 Balancing Operations**: Implements Left Rotation, Right Rotation, Left-Right Rotation, and Right-Left Rotation.
-
-## Compilation and Execution
-
-### Requirements:
-- GCC Compiler (for Linux/Windows)
-- Basic knowledge of C programming
-
-### Steps to Compile and Run:
-1. Open a terminal or command prompt.
-   
-2. Navigate to the directory containing `AVL-AlgoX.c`.
-   
-3. Compile the program using:
-   ```sh
-   gcc AVL-AlgoX.c -o AVL-AlgoX
-   ```
-   
-4. Run the compiled program:
-   ```sh
-   ./AVL-AlgoX
-   ```
+- **Insertion ➕** : Inserts nodes into the AVL tree while maintaining balance.
+- **Deletion ➖** : Removes nodes and rebalances the tree.
+- **Searching 🔎** : Searches for a node in the tree.
+- **Traversals 🛤** : Supports Pre-Order, In-Order, and Post-Order traversals.
+- **Balancing 🔄** : Implements Left Rotation, Right Rotation, Left-Right Rotation, and Right-Left Rotation.
 
 ## Usage
 
@@ -49,6 +28,26 @@
 - **delete_node(node*)**: Deletes a node and rebalances the tree.
 - **search_node(node*, int)**: Searches for a node with a given key.
 - **PreOrder(), InOrder(), PostOrder()**: Traverses the tree in different orders.
+
+## Requirements:
+- GCC Compiler (for Linux/Windows)
+- Basic knowledge of C programming
+
+## Steps to Compile and Run:
+
+1. Open a terminal or command prompt.
+   
+2. Navigate to the directory containing `AVL-AlgoX.c`.
+   
+3. Compile the program using:
+   ```sh
+   gcc AVL-AlgoX.c -o AVL-AlgoX
+   ```
+   
+4. Run the compiled program:
+   ```sh
+   ./AVL-AlgoX
+   ```
 
 ## Example Run
 
@@ -77,3 +76,5 @@ Binary Search Tree traversal after deletion...
 Pre-Order traversal...
 30 10 40 50
 ```
+
+### 👨‍💻 Happy Coding & Tree Balancing! 🌲
