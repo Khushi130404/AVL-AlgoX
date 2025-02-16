@@ -4,19 +4,19 @@
 
 ## 🚀 Features
 
-- **Insertion ➕** : Inserts nodes into the AVL tree while maintaining balance.
-- **Deletion ➖** : Removes nodes and rebalances the tree.
-- **Searching 🔎** : Searches for a node in the tree.
-- **Traversals 🛤** : Supports Pre-Order, In-Order, and Post-Order traversals.
-- **Balancing 🔄** : Implements Left Rotation, Right Rotation, Left-Right Rotation, and Right-Left Rotation.
+➕ **Insertion** : Inserts nodes into the AVL tree while maintaining balance.  
+➖ **Deletion** : Removes nodes and rebalances the tree.  
+🔎 **Searching** : Searches for a node in the tree.  
+🛤 **Traversals** : Supports Pre-Order, In-Order, and Post-Order traversals.  
+🔄 **Balancing** : Implements Left Rotation, Right Rotation, Left-Right Rotation, and Right-Left Rotation.  
 
 ## Usage
 
-1. Enter the number of nodes to insert.
-2. Enter the values for each node.
-3. View the tree traversal outputs.
-4. Search for a node by entering its key.
-5. Delete a node and observe the updated tree structure.
+1️⃣ Enter the number of nodes to insert.  
+2️⃣ Input values for each node.  
+3️⃣ View the tree traversal outputs.  
+4️⃣ Search for a node by entering its key.  
+5️⃣ Delete a node and observe the updated tree structure.  
 
 ## Function Descriptions
 
