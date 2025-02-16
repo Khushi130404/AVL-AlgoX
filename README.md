@@ -14,7 +14,7 @@
 
 🔄 **Balancing** : Implements Left Rotation, Right Rotation, Left-Right Rotation, and Right-Left Rotation.  
 
-## Usage
+## ⭐ Usage
 
 1️⃣ Enter the number of nodes to insert.  
 2️⃣ Input values for each node.  
@@ -40,28 +40,28 @@
 
 🛤 **PreOrder(), InOrder(), PostOrder()**: 📜 Traverses the tree in different orders.  
 
-## Requirements:
+## 🤖 Requirements 
 
 - GCC Compiler (for Linux/Windows)
 - Basic knowledge of C programming
 
-## Steps to Compile and Run:
+## 💻 Steps to Compile and Run  
 
 1. Open a terminal or command prompt.
    
-2. Navigate to the directory containing `AVL-AlgoX.c`.
+2. Navigate to the directory containing `AVL.cpp`.
    
 3. Compile the program using:
    ```sh
-   gcc AVL-AlgoX.c -o AVL-AlgoX
+   gcc AVL.cpp -o AVL
    ```
    
 4. Run the compiled program:
    ```sh
-   ./AVL-AlgoX
+   ./AVL
    ```
 
-## Example Run
+## 🏃🏻‍♀ Example Run 
 
 ```
 Enter the number of nodes: 5
@@ -89,4 +89,4 @@ Pre-Order traversal...
 30 10 40 50
 ```
 
-### 👨‍💻 Happy Coding & Tree Balancing! 🌲
+### 👩🏻‍💻 Happy Coding & Tree Balancing! 🌲
